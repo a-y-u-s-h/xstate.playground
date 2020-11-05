@@ -3,17 +3,14 @@ import Systems from "@/systems"
 import theme from "@/settings/theme"
 import { ThemeProvider as Theme } from "theme-ui"
 import "@/assets/styles/index.css"
+import { inspect } from "@xstate/inspect"
 
 export const Application = props => {
-  /*
-    ======================================
-      This component is the entry point of
-      the application. So if you have any global
-      styles or anything else that you want to
-      have applied globally, you can modify this
-      component to achieve them.
-    ======================================
-  */
+
+  React.useEffect(() => {
+    inspect({ iframe: false })
+  }, [])
+
   const { Component, pageProps } = props
   return (
     <Theme theme={theme}>

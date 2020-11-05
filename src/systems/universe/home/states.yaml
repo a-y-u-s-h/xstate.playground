@@ -1,0 +1,19 @@
+id: home
+type: parallel
+context:
+states:
+  theme:
+    initial: default
+    states:
+      default:
+        meta:
+  layout:
+    initial: default
+    states:
+      default:
+        meta:
+  content:
+    initial: default
+    states:
+      default:
+        meta:
