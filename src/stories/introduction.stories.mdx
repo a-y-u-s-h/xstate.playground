@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks"
+import { Box } from "theme-ui"
+
+<Meta title="Introduction" />
+
+## Introduction
+
+This storybook contains documentation of components used in this project. All
+components rely on state machines so that all component logic here remains
+future-proof. React componenets are merely wrappers around these state machines
+to map user events to those of state machines. So if you are curious about any
+implementations, you'll be better off looking inside the `systems` folder. Every
+state machine in this project is implemented in [Xstate](https://xstate.js.org/)
+and there's a common component format for each `system`. And every `system` (or
+a logical unit) can be visualized by first converting the `states.yaml` file for
+that component to a JSON file and then using
+[Xstate Visualizer](https://xstate.js.org/viz/).
+
+---

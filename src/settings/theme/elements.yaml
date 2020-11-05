@@ -1,0 +1,166 @@
+buttons:
+  primary:
+    boxSizing: border-box
+    fontFamily: body
+    position: relative
+    display: inline-flex
+    alignItems: center
+    boxAlign: center
+    flexWrap: nowrap
+    fontSmoothing: antialiased
+    appearance: none
+    verticalAlign: middle
+    textDecoration: none
+    border: none
+    outline: none
+    cursor: pointer
+    justifyContent: center
+    boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px -1px 1px 0px inset
+    fontWeight: 500
+    borderRadius: 3px
+    fontSize: 12px
+    lineHeight: 32px
+    letterSpacing: 0px
+    height: 32px
+    color: rgb(66, 90, 112)
+    backgroundColor: white
+    backgroundImage: gradients.white.100
+    "&:active":
+      backgroundImage: linear-gradient(rgb(230, 230, 230), rgb(244, 245, 247))
+      backgroundColor: rgba(16, 112, 202, 0.09)
+      boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px 1px 1px 0px inset
+    "&:focus":
+      boxShadow: rgba(67, 90, 200, 0.5) 0px 0px 0px 1px inset, rgba(67, 90, 200, 0.3) 0px 1px 2px inset
+      outline: none
+
+  regular:
+    info:
+      variant: buttons.primary
+      backgroundImage: linear-gradient(rgb(7, 136, 222), rgb(17, 106, 184))
+      color: white
+      "&:active":
+        backgroundImage: linear-gradient(rgb(15, 93, 161), rgb(15, 93, 161))
+        boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px 1px 1px 0px inset
+    success:
+      variant: buttons.primary
+      backgroundImage: linear-gradient(rgb(35, 194, 119), rgb(57, 157, 108))
+      color: white
+      "&:active":
+        backgroundImage: linear-gradient(rgb(50, 138, 95), rgb(50, 138, 95))
+        boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px 1px 1px 0px inset
+    warning:
+      variant: buttons.primary
+      backgroundImage: linear-gradient(rgb(238, 153, 19), rgb(217, 130, 43))
+      color: white
+      "&:active":
+        backgroundImage: linear-gradient(rgb(199, 117, 36), rgb(199, 117, 36))
+        boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px 1px 1px 0px inset
+    danger:
+      variant: buttons.primary
+      backgroundImage: linear-gradient(rgb(236, 76, 71), rgb(214, 69, 64))
+      color: white
+      "&:active":
+        backgroundImage: linear-gradient(rgb(208, 50, 45), rgb(208, 50, 45))
+        boxShadow: rgba(67, 90, 111, 0.14) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.06) 0px 1px 1px 0px inset
+
+  minimal:
+    info:
+      variant: buttons.primary
+      background: transparent
+      color: rgb(16, 112, 202)
+    success:
+      variant: buttons.primary
+      background: transparent
+      color: rgb(0, 120, 62)
+    warning:
+      variant: buttons.primary
+      background: transparent
+      color: rgb(149, 89, 30)
+    danger:
+      variant: buttons.primary
+      background: transparent
+      color: rgb(191, 14, 8)
+
+# <-------------------------------------->
+
+forms:
+  button:
+    variant: buttons.primary
+    backgroundColor: navy.900
+    color: white
+    "&:active":
+      backgroundImage: none
+      backgroundColor: quinary.900
+      boxShadow: rgba(67, 90, 200, 0.5) 0px 0px 0px 1px inset, rgba(67, 90, 200, 0.3) 0px 1px 2px inset
+      outline: none
+    "&:hover":
+      backgroundColor: quinary.800
+    "&:focus":
+      boxShadow: rgba(67, 90, 200, 0.5) 0px 0px 0px 1px inset, rgba(67, 90, 200, 0.3) 0px 1px 2px inset
+      outline: none
+
+  input:
+    boxSizing: border-box
+    fontSmoothing: antialiased
+    fontFamily: body
+    fontWeight: 400
+    flex: 1 1 0%
+    textOverflow: ellipsis
+    appearance: none
+    border: none
+    color: "#FEFEFE0"
+    backgroundColor: quinary.900
+    boxShadow: rgba(67, 90, 111, 0.3) 0px 0px 0px 1px inset, rgba(67, 90, 111, 0.14) 0px 1px 2px inset
+    fontSize: 12px
+    letterSpacing: 0px
+    height: 30px
+    width: 100%
+    lineHeight: 16px
+    padding: 8px
+    borderRadius: 3px
+    "&:focus":
+      boxShadow: rgba(67, 90, 200, 0.5) 0px 0px 0px 1px inset, rgba(67, 90, 200, 0.3) 0px 1px 2px inset
+      outline: none
+
+  select:
+    variant: forms.input
+
+  option:
+    backgroundColor: navy.900
+    fontSmoothing: antialiased
+    color: white
+    outline: none
+    border: none
+    boxShadow: none
+    "&:active":
+      backgroundColor: navy.600
+      color: white
+      outline: none
+      border: none
+      boxShadow: none
+    "&:checked":
+      boxShadow: 0 0 10px 100px "#1882A8" inset
+    "&:hover":
+      boxShadow: 0 0 10px 100px "#1882A8" inset
+
+  slider:
+    appearance: none
+    width: 100%
+    height: 1px
+    outline: none
+    opacity: 0.7
+    transition: opacity 0.2s
+    "&:hover":
+      opacity: 1
+    "&::-webkit-slider-thumb":
+      appearance: none
+      width: 15px
+      height: 15px
+    "&::-moz-range-thumb":
+      appearance: none
+      width: 15px
+      height: 15px
+    "&::-ms-thumb":
+      appearance: none
+      width: 15px
+      height: 15px

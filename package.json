@@ -1,0 +1,143 @@
+{
+  "name": "xstate.playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ayush Sharma <code.ayush@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "develop": "next",
+    "docs": "serve docs",
+    "build": "next build",
+    "start": "next start",
+    "prepare": "yarn lint && yarn clean",
+    "lint": "prettier --write 'src/**/*.{js,jsx}'",
+    "storybook": "start-storybook -s ./public,./src/assets/ -p 6006",
+    "update": "npx npm-check-updates -u --timeout 300000 && yarn install",
+    "clean": "rimraf .next yarn.lock *lock.json .nyc_output coverage *.log",
+    "test:unit": "yarn prepare && jest --config ./jest.config.js --passWithNoTests --watchAll",
+    "test:e2e": "yarn prepare && start-server-and-test develop http://localhost:3000 'cypress open'",
+    "test:coverage": "jest --config ./jest.config.js --passWithNoTests --coverage && serve coverage/lcov-report",
+    "storybook:build": "NODE_ENV=production build-storybook -s ./public,./src/assets/ -o .storybook/styleguide",
+    "storybook:share": "NODE_ENV=production yarn storybook:build && surge .storybook/styleguide"
+  },
+  "precommit": [
+    "prepare"
+  ],
+  "dependencies": {
+    "@theme-ui/presets": "^0.3.0",
+    "@xstate/react": "^1.0.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "jest": "^26.6.3",
+    "joi": "^17.3.0",
+    "js-yaml-loader": "^1.2.2",
+    "next": "^10.0.1",
+    "next-connect": "^tl0.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "theme-ui": "^0.3.1",
+    "xstate": "^4.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-react-jsx": "^7.12.5",
+    "@cypress/code-coverage": "^3.8.3",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-console": "^1.2.2",
+    "@storybook/addon-controls": "^6.0.28",
+    "@storybook/addon-docs": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-knobs": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addon-storysource": "^6.0.28",
+    "@storybook/addon-viewport": "^6.0.28",
+    "@storybook/addons": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "@storybook/theming": "^6.0.28",
+    "@testing-library/cypress": "^7.0.1",
+    "@testing-library/dom": "^7.26.5",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "cypress": "^5.5.0",
+    "cypress-axe": "^0.10.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-yaml-transform": "^0.2.0",
+    "msw": "^0.21.3",
+    "pm2": "^4.5.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.1.2",
+    "react-is": "^17.0.1",
+    "serve": "^11.3.2",
+    "start-server-and-test": "^1.11.5",
+    "yaml-loader": "^0.6.0"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "@emotion/babel-plugin-jsx-pragmatic",
+        {
+          "module": "theme-ui",
+          "import": "jsx",
+          "export": "jsx"
+        }
+      ],
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragma": "jsx",
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "printWidth": 80,
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "requirePragma": false,
+    "proseWrap": "preserve",
+    "overrides": [
+      {
+        "files": "*.sass",
+        "options": {
+          "printWidth": 999
+        }
+      },
+      {
+        "files": "*.mdx",
+        "options": {
+          "tabWidth": 2,
+          "printWidth": 80,
+          "proseWrap": "always"
+        }
+      },
+      {
+        "files": "*.md",
+        "options": {
+          "tabWidth": 2,
+          "printWidth": 80,
+          "proseWrap": "always",
+          "htmlWhitespaceSensitivity": "strict"
+        }
+      },
+      {
+        "files": "*.html",
+        "options": {
+          "htmlWhitespaceSensitivity": "strict"
+        }
+      }
+    ]
+  }
+}

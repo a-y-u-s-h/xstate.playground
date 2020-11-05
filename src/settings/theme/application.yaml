@@ -1,0 +1,49 @@
+components:
+  layouts:
+    box:
+      expand:
+        naturally:
+          width: 100%
+          height: 100%
+          overflowY: auto
+        horizontally:
+          variant: components.layouts.box.expand.naturally
+          width: 100%
+          height: fit-content
+          minHeight: 10%
+        vertically:
+          variant: components.layouts.box.expand.naturally
+          width: fit-content
+          height: 100%
+          minWidth: 10%
+    grid:
+      variant: components.layouts.box.expand.naturally
+      display: grid
+      gridGap: 0
+      padding: 0
+    flex:
+      variant: components.layouts.box.expand.naturally
+      width: 100%
+      height: 100%
+      display: flex
+      gridGap: 0
+      padding: 0
+    pane:
+      grid:
+        variant: components.layouts.grid
+        backgroundImage: "linear-gradient(to bottom,#e8e6e8 0,#d1cfd1 100%)"
+        padding: 0
+        gridGap: 0
+        border: 1px solid
+        borderColor: gray.100
+      flex:
+        variant: components.layouts.flex
+        backgroundImage: "linear-gradient(to bottom,#e8e6e8 0,#d1cfd1 100%)"
+        padding: 0
+        gridGap: 0
+        border: 1px solid
+        borderColor: gray.100
+
+application:
+  pages:
+    home:
